@@ -1,0 +1,28 @@
+
+	@extends('includes.template')
+
+	@section('content')
+
+<div class="servicesBrief">
+			<h1>ADD A NEW SERVICE</h1>
+
+		</div>
+
+		{{ Form::open(array('url' => 'services')) }}
+
+				{{Form::label('title', 'Title')}}
+				{{Form::text('title')}}
+
+				{{Form::label('content', 'Content')}}
+				{{Form::text('content')}}
+
+				{{Form::submit('Add New Service')}} <br>
+
+		{{ Form::close() }}
+		{{Session::get("error")}}
+
+
+
+	</div> <!-- end of container -->
+	
+	@stop
