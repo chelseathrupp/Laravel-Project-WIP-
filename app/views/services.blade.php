@@ -18,6 +18,14 @@
 
 		</div>
 
+		@if ((Auth::check()) && (Auth::user()->role ==2))
+			<a class="editButton" href="{{URL::to('services/new')}}">+  NEW SERVICE</a>
+
+		
+
+		@endif
+
+
 
 		@foreach($services as $service)
 		<div class="serviceHolder">
@@ -28,7 +36,7 @@
 			</div>
 		@endforeach
 
-
+	
 	</div> <!-- end of container -->
 
 	<div id="footer">

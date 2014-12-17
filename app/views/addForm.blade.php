@@ -28,22 +28,22 @@
 			<div class="staffContent">
 
 				<div class="addNewStaff">
-					<h3>Staff Forms</h3>
-				<ul class="forms">
+					<h3>New Staff Form</h3>
 
-					@foreach($forms as $form)
-					<li><a href="">{{$form->title}}</a> </li>
+					{{ Form::open(array('url' => 'formNew','files'=>true)) }}
 
-					@endforeach
 					
+					{{Form::text('title',null,array('placeholder'=>'Form Title'))}} <br>
+					{{Form::text('type',null,array('placeholder'=>'Form Category'))}} <br>
+
 					
+					{{Form::label('form','Form')}}
+					 {{Form::file('form')}}<br>
 
+					{{Form::submit('Add New Form')}} <br>
 
-
-				</ul>
-
-				<a class="addNew" href="{{URL::to('form/new')}}"><span>ADD NEW FORM</span></a>
-				</div>
+					{{ Form::close() }}
+					{{Session::get("error")}}
 
 
 				

@@ -34,13 +34,13 @@
 				<p>{{$user->lastname}}</p>
 
 				<h5>Email:</h5>
-				<p><a href="">{{$user->email}}</a><i class="fa fa-pencil"></i></p>
+				<p data-field="title" data-url="{{URL::to('users/'.$user->id)}}">{{$user->email}}<i class="fa fa-pencil"></i></p>
 
 				<h5>Phone:</h5>
-				<p><a href="">{{$user->phone}}</a><i class="fa fa-pencil"></i></p>
+				<p  data-field="title" data-url="{{URL::to('users/'.$user->id)}}">{{$user->phone}}<i class="fa fa-pencil"></i></p>
 
 				<h5>Address:</h5>
-				<p><a href="">{{$user->address}}</a><i class="fa fa-pencil"></i></p>
+				<p  data-field="title" data-url="{{URL::to('users/'.$user->id)}}">{{$user->address}}<i class="fa fa-pencil"></i></p>
 			</div>
 		</div>
 

@@ -34,11 +34,28 @@
 		      <input type="search" id="search" placeholder="Search..." />
 		      	</div>
 
+		      	@if (isset(Auth::user()->id))
+					<ul>
+						<li><a href="{{URL::to('about')}}">ABOUT</a></li>
+						<li><a href="{{URL::to('contact')}}">CONTACT</a></li>
+						<li>WELCOME, <a class="onlineUser"href="{{URL::to('users/'.Auth::user()->id)}}">{{Auth::user()->firstname}} {{Auth::user()->lastname}}</a></li>
+					</ul>
+				@else
+					
 					<ul>
 						<li><a href="{{URL::to('about')}}">ABOUT</a></li>
 						<li><a href="{{URL::to('contact')}}">CONTACT</a></li>
 						<li><a href="{{URL::to('login')}}">STAFF LOGIN</a></li>
 					</ul>
+					
+
+				@endforelse
+<!-- 
+					<ul>
+						<li><a href="{{URL::to('about')}}">ABOUT</a></li>
+						<li><a href="{{URL::to('contact')}}">CONTACT</a></li>
+						<li><a href="{{URL::to('login')}}">STAFF LOGIN</a></li>
+					</ul> -->
 
 					
 				</nav> <!-- end of secondaryNav -->

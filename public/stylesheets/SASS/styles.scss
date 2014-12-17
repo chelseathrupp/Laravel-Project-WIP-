@@ -29,11 +29,42 @@ $large: 130em;
 	z-index: 9999;
 }
 
+.editButton{
+		text-align:center;
+		width:12em;
+		margin: 0.5em auto 3.5em auto;
+		padding: 1em 1.5em 1em 1.5em;
+		float: left;
+		display: block;
+		background-color: $darkgrey;
+		color: white;
+		outline: 1px white solid;
+		transition: background-color 0.4s ease;
+}
+
+.editButton:hover{
+	background-color: $mediumgrey;
+
+}
+
 
 
 body,html{
 	width:100%;
 	overflow-x: hidden;
+}
+
+textarea.textAreaNewContent{
+		font-size: 1em;
+		border-radius: 3px;
+		// border-radius:5px;
+		border:1px solid #cbcbcb;
+		box-shadow:inset 0 1px 2px rgba(0,0,0,0.18);
+		margin-bottom:0.5em;
+		padding-left: 1em;
+		padding-top:1em;
+		width: 40em;
+		height: 10em;
 }
 
 input[type="text"]{
@@ -198,6 +229,7 @@ textarea:hover, textarea:focus, textarea:active{
 
 			ul{
 				display:none;
+				text-transform: uppercase;
 			}
 
 			.mainSearch{
@@ -206,6 +238,11 @@ textarea:hover, textarea:focus, textarea:active{
 			}
 
 		@media (min-width: $desktop) {
+
+			color: #979797;
+			transition: color 1s ease;
+			font-family: Helvetica;
+			font-weight: lighter;
 		
 			ul{
 				float:right;
@@ -213,16 +250,23 @@ textarea:hover, textarea:focus, textarea:active{
 				
 				li{
 					display: inline-block;
-					padding: 1.2em 0.7em;
+					padding: 2em 0.7em;
+					font-size:0.7em;
 
 					a{
 							color: #979797;
-							font-size:0.7em;
+							// font-size:0.7em;
 							transition: color 1s ease;
 					}
 
 					a:hover{
 						color: $darkgrey;
+					}
+
+
+					.onlineUser{
+						text-decoration: underline;
+						color: $navy;
 					}
 				}
 		}
@@ -1406,6 +1450,13 @@ box-shadow: 0px 1px 28px -15px rgba(0,0,0,0.4);
 
 
 // services page
+
+.addNewContent{
+	float: left;
+	width: 100%;
+	margin-top: -2em;
+	margin-bottom: 4em;
+}
 
 .servicesinfo{
 	@extend .info;

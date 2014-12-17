@@ -11,12 +11,21 @@
 		</div>
 
 
+		@if ((Auth::check()) && (Auth::user()->role ==2))
+			<a class="editButton" href="{{URL::to('services/new')}}">+  NEW SERVICE</a>
+
+		
+
+		@endif
+
+
+
 		
 		@foreach($posts as $post)
 		<div class="blogHolder">
 			<div class="blogImage"><img src="Images/blogpost.jpg" alt=""></div>
-			<h2>{{$post->title}}</h2>
-			<p>{{$post->content}}</p>
+			<h2 data-field="title" data-url="{{URL::to('post/'.$post->id)}}">{{$post->title}}</h2>
+			<div data-field="content" data-url="{{URL::to('post/'.$post->id)}}">{{$post->content}}</div>
 
 			<a class="primary" href="{{URL::to('post/'.$post->id)}}">READ MORE</a>
 			</div>

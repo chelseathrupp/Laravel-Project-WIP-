@@ -4,23 +4,25 @@
 	@section('content')
 
 	<div class="servicesBrief">
-			<h1 class="bigHeading">Add New Service</h1>
+			<h1 class="bigHeading">Add A New Blog Post</h1>
 
 		</div>
 
 		<div class="addNewContent">
 
-		{{ Form::open(array('url' => 'servicesNew')) }}
+		{{ Form::open(array('url' => 'postNew','files'=>true)) }}
 
 				
-				{{Form::text('title',null,array('placeholder'=>'Service Title'))}} <br>
-				{{$errors->first('title','<p class="error">:message</p>')}}<br>
-				
-				<!-- <textarea class="textAreaNewContent" name="content" form="content" placeholder="Service Content"></textarea> -->
-				{{Form::textarea('content',null,array('placeholder'=>'Content', "class"=>"textAreaNewContent"))}} <br>
-				 <br>{{$errors->first('content','<p class="error">:message</p>')}}<br>
+				{{Form::text('title',null,array('placeholder'=>'Blog Title'))}} <br>
 
-				{{Form::submit('Add New Service')}} <br>
+				
+				<textarea class="textAreaNewContent" name="content" form="content" placeholder="Blog Content"></textarea>
+				 <br>
+				
+					{{Form::label('blogimage','Feature Blog Image')}}
+				 	{{Form::file('blogimage')}}<br>
+
+				{{Form::submit('Add New Blog Post')}} <br>
 
 		{{ Form::close() }}
 		{{Session::get("error")}}
